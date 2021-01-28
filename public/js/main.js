@@ -21,8 +21,8 @@ const hudAltitude = document.querySelector('.hud-altitude .hud-text');
 // map
 const lightMapStyle = 'mapbox/light-v10';
 const darkMapStyle = 'mapbox/dark-v10';
-const apiTilesKey = 'api key here to test'
 const  map = L.map('map',{ zoomControl: false, attributionControl: false});
+const apiTilesKey = 'apk.eyJ1Ijoicm9ib3RtaXNjaGllZiIsImEiOiJja2toYmt3dHYwNm15MnVyb3RzcmRubHBtIn0.hnaTrnN-sYO3IRoJHDKpoQ';
 L.control.attribution({position: 'topright'}).addTo(map);
 const markersLayer = new L.LayerGroup();
 const polylinesLayer = new L.LayerGroup();

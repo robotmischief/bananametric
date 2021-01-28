@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="Description" content="Banana Geolocation in your phone" />
+    <meta name="author" content="robotmischief" />
+    <meta name="theme-color" content="#feda00" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
@@ -132,5 +135,13 @@
         </div>
       </div>
     </div>
+    <!-- service worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
+    </script>
   </body>
 </html>
