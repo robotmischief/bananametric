@@ -271,7 +271,7 @@ function locationError(error) {
     switch(error.code){
         case 1:
             //error PERMISSION DENIED
-            msg = 'please enable geolocation while using this App.';
+            msg = 'please ENABLE geolocation and RELOAD this App';
             break;
             
         case 2:
