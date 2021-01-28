@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <!-- Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <!-- custom -->
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer src="/js/main.js"></script>
+
+    <title>BANANAmetric</title>
+  </head>
+  <body>
+    <div class="container-main">
+      <div class="header">
+        <h1>BANANA<span>metric</span></h1>
+      </div>
+      <div class="container-map">
+        <div id="map"></div>
+      </div>
+      <div class="footer">
+        <div class="results">
+          <p class="distance">
+            Walk around and drop a few bananas<span class="value"></span
+            ><span class="units"></span>
+          </p>
+          <p class="area">
+            <span class="value"></span><span class="units"><sup></sup></span>
+          </p>
+        </div>
+        <div id="dashboard-form">
+          <div class="dashboard">
+            <div class="left">
+              <button id="locate-btn">pause</button>
+
+              <label for="hud-check">
+                <input
+                  type="checkbox"
+                  name="hud-check"
+                  id="hud-check"
+                  class="hud-check"
+                  checked
+                />
+
+                <span class="checkmark"></span>
+
+                <p>HUD</p>
+              </label>
+            </div>
+
+            <div class="middle">
+              <button id="setmarker-btn">
+                <img src="/images/button-mark-me.png" alt="set marker button" />
+              </button>
+              <p>set marker</p>
+            </div>
+            <div class="right">
+              <button id="clear-btn">clear all</button>
+              <label for="cheat-check">
+                <input
+                  type="checkbox"
+                  name="cheat-check"
+                  id="cheat-check"
+                  class="cheat-check"
+                />
+                <span class="checkmark"></span>
+                <p>cheat</p>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hud">
+        <div class="hud-row-1">
+          <div class="hud-accuracy">
+            <img src="images/banana-mark-green.png" alt="accuracy image" />
+            <div class="hud-title">
+              accuracy
+              <div class="hud-text">0 bns</div>
+            </div>
+          </div>
+          <div class="hud-speed">
+            <div class="hud-title">speed</div>
+            <div class="hud-text">0 bns</div>
+          </div>
+          <div class="hud-altitude">
+            <div class="hud-title">altitude</div>
+            <div class="hud-text">0 bns</div>
+          </div>
+        </div>
+        <div class="hud-row-2">
+          <div class="hud-lat">
+            <div class="hud-title">latitude</div>
+            <div class="hud-text">0</div>
+          </div>
+          <div class="hud-lon">
+            <div class="hud-title">longitude</div>
+            <div class="hud-text">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

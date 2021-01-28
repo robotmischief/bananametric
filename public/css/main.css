@@ -1,0 +1,296 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* vars */
+:root {
+  --color-banana-dim: #d1aa2b;
+  --color-banana-bright: #ffde17;
+  --color-banana-dark: #70401e;
+}
+
+/* resets */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  height: 100%;
+  width: 100vw;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background-color: var(--color-banana-bright);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-family: "Nerko One", cursive;
+  font-size: 36px;
+  color: var(--color-banana-dark);
+}
+h1 span {
+  font-size: 26px;
+}
+
+.container-map {
+  flex-grow: 1;
+  position: relative;
+  z-index: 0;
+}
+
+#map {
+  height: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  background-color: var(--color-banana-bright);
+  box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.results {
+  text-align: center;
+  height: 50px;
+  margin: 10px 0;
+}
+.results p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-banana-dark);
+}
+.distance,
+.area {
+  font-weight: 700;
+}
+
+.value {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 18px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 100px;
+  color: var(--color-banana-dark);
+  font-family: "Roboto", sans-serif;
+}
+.dashboard p {
+  margin: 10px;
+}
+
+.dashboard .left,
+.dashboard .right {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-20px);
+}
+
+.dashboard .left button,
+.dashboard .right button {
+  height: 90px;
+  width: 90px;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--color-banana-dim);
+  font-family: "Nerko One", cursive;
+  font-size: 26px;
+  line-height: 22px;
+  color: var(--color-banana-dark);
+  border: none;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.dashboard .middle button {
+  display: inline-block;
+  background-color: transparent;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.dashboard .middle button img {
+  height: 100px;
+  float: left;
+  transform: translate(-20%, -25%);
+}
+.dashboard .middle p {
+  font-family: "Nerko One", cursive;
+  font-size: 32px;
+  margin: 0;
+  transform: translateY(-40px);
+}
+
+button:focus {
+  outline: none;
+}
+
+.hud-check,
+.cheat-check {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  background-color: var(--color-banana-dim);
+}
+
+.checkmark {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: var(--color-banana-dim);
+  left: 0px;
+  top: 6px;
+  border-radius: 50%;
+}
+
+label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.left p,
+.right p {
+  position: absolute;
+  left: 20px;
+}
+
+label input:checked ~ .checkmark {
+  background-color: var(--color-banana-dark);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+label input:checked ~ .checkmark::after {
+  display: block;
+}
+
+label .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--color-banana-bright);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hud {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 95vw;
+  height: 130px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  color: black;
+  font-size: 22px;
+  border-radius: 22px 22px 0 0;
+  bottom: 165px;
+  transition: all 1s ease-in-out;
+}
+
+.hide {
+  bottom: 0;
+}
+
+.hud-row-1,
+.hud-row-2 {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin-top: 10px;
+}
+
+.hud-accuracy {
+  display: flex;
+  text-align: left;
+}
+.hud-accuracy img {
+  width: 52px;
+  height: 42px;
+  align-self: center;
+}
+
+.hud-speed {
+  text-align: center;
+}
+
+.hud-altitude {
+  text-align: right;
+}
+
+.hud-lat {
+  text-align: left;
+}
+
+.hud-lon {
+  text-align: right;
+}
+
+.hud-title {
+  font-family: "Nerko One", cursive;
+  font-size: 20px;
+}
+
+.hud-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+.popUp {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  margin: 0;
+}
+
+.popUp h3 {
+  font-family: "Nerko One", cursive;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0;
+  color: var(--color-banana-dark);
+}
+
+.popUp p {
+  margin: 0;
+}
