@@ -21,8 +21,8 @@ const hudAltitude = document.querySelector('.hud-altitude .hud-text');
 // map
 const lightMapStyle = 'mapbox/light-v10';
 const darkMapStyle = 'mapbox/dark-v10';
-const apiTilesKey = 'api key here to test'
 const  map = L.map('map',{ zoomControl: false, attributionControl: false});
+const apiTilesKey = 'pk.eyJ1Ijoicm9ib3RtaXNjaGllZiIsImEiOiJja2toYmt3dHYwNm15MnVyb3RzcmRubHBtIn0.hnaTrnN-sYO3IRoJHDKpoQ';
 L.control.attribution({position: 'topright'}).addTo(map);
 const markersLayer = new L.LayerGroup();
 const polylinesLayer = new L.LayerGroup();
@@ -73,7 +73,7 @@ const mainPopUp = "<div class='popup'>I am a Banana and<br><strong>you are here<
 function initMap() {
     map.fitWorld();
 
-    L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${apiTilesKey}`, {
+    L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}`, {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: zoomMax,
         minZoom: zoomMin,
@@ -271,7 +271,7 @@ function locationError(error) {
     switch(error.code){
         case 1:
             //error PERMISSION DENIED
-            msg = 'please enable geolocation while using this App.';
+            msg = 'please ENABLE geolocation and RELOAD this App';
             break;
             
         case 2:

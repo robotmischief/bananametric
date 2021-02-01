@@ -1,0 +1,23 @@
+{
+  "name": "bananametric",
+  "version": "1.0.0",
+  "description": "Banana Geolocation in your phone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robotmischief/bananametric.git"
+  },
+  "author": "robotmishief",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/robotmischief/bananametric/issues"
+  },
+  "homepage": "https://github.com/robotmischief/bananametric#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
